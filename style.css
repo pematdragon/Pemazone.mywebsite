@@ -1,0 +1,96 @@
+/* ------------------ Global ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+/* ------------------ Navbar ------------------ */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: #111;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
+}
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: red;
+}
+.nav-links, .navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+.nav-links li a, .navbar ul li a {
+  color: red;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+.nav-links li a:hover, .navbar ul li a:hover {
+  background-color: red;
+  color: black;
+  transform: scale(1.05);
+}
+#menu-toggle {
+  display: none;
+}
+.menu-icon {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-icon span {
+  width: 28px;
+  height: 3px;
+  background: red;
+  margin: 5px 0;
+  transition: 0.3s;
+}
+@media (max-width: 768px) {
+  .menu-icon { display: flex; }
+  .navbar ul { 
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: #111;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    padding: 20px 0;
+  }
+  #menu-toggle:checked + .menu-icon + ul { display: flex; }
+  .navbar ul li { margin: 10px 0; text-align: center; }
+}
+.hero { padding: 150px 20px 100px; text-align: center; animation: fadeIn 1.5s ease-in-out; }
+.hero h1 { color: red; font-size: 50px; margin-bottom: 20px; }
+.hero p { font-size: 22px; max-width: 700px; margin: 0 auto; color: #fff; }
+section { padding: 80px 20px; text-align: center; animation: fadeIn 1.5s ease-in-out; }
+section h1, section h2 { color: red; margin-bottom: 20px; }
+.interests { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px; }
+.interest-item { background-color: #111; border: 2px solid red; padding: 25px; border-radius: 12px; width: 220px; font-weight: bold; transition: all 0.3s ease; }
+.interest-item:hover { background-color: red; color: black; border-color: black; transform: translateY(-5px); }
+footer { background-color: #111; color: red; text-align: center; padding: 20px 0; border-top: 2px solid red; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) {
+  .logo { font-size: 1.5rem; }
+  .hero h1 { font-size: 32px; }
+  .hero p { font-size: 18px; }
+  .interest-item { width: 90%; }
+}
