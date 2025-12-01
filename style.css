@@ -103,12 +103,12 @@ section {
 }
 section h1, section h2 { color: red; margin-bottom: 20px; }
 
-/* ------------------ Interests Section ------------------ */
+/* ------------------ Interests Section (Stacked) ------------------ */
 .interests { 
   display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  gap: 20px; 
+  flex-direction: column;  /* Stack vertically */
+  align-items: center;     /* Center items horizontally */
+  gap: 30px;               /* Space between interests */
   margin-top: 30px; 
 }
 
@@ -117,7 +117,8 @@ section h1, section h2 { color: red; margin-bottom: 20px; }
   border: 2px solid red; 
   padding: 25px; 
   border-radius: 12px; 
-  width: 220px; 
+  width: 90%;            /* Take most of page width */
+  max-width: 600px;      /* Optional max width */
   font-weight: bold; 
   transition: all 0.3s ease; 
   display: flex; 
@@ -150,14 +151,13 @@ section h1, section h2 { color: red; margin-bottom: 20px; }
 /* Interest Images */
 .interest-images {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column; /* Stack images vertically if needed */
+  align-items: center;    /* Center image */
   gap: 10px;
-  justify-content: center;
   margin-top: 15px;
 }
 .interest-images img {
   border-radius: 8px;
-  flex: 1 1 100px;
   max-width: 100%;
   height: auto;
   transition: transform 0.3s;
@@ -188,4 +188,5 @@ footer {
   .hero p { font-size: 18px; }
   .interest-item { width: 90%; }
 }
+
 
