@@ -1,15 +1,10 @@
 /* ------------------ Global ------------------ */
-.nav-logo {
-  height: 50px;        
-  width: auto;         
-  border-radius: 8px;  
-}
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
   background-color: #000;
@@ -17,6 +12,7 @@ body {
   line-height: 1.6;
   padding-bottom: 50px;
 }
+
 a {
   text-decoration: none;
   color: inherit;
@@ -34,36 +30,43 @@ a {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
 }
+
 .logo {
   font-size: 28px;
   font-weight: bold;
   color: red;
 }
-.nav-links, .navbar ul {
+
+.navbar ul {
   list-style: none;
   display: flex;
   gap: 25px;
 }
-.nav-links li a, .navbar ul li a {
+
+.navbar ul li a {
   color: red;
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 4px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
-.nav-links li a:hover, .navbar ul li a:hover {
+
+.navbar ul li a:hover {
   background-color: red;
   color: black;
   transform: scale(1.05);
 }
+
 #menu-toggle {
   display: none;
 }
+
 .menu-icon {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
+
 .menu-icon span {
   width: 28px;
   height: 3px;
@@ -71,6 +74,8 @@ a {
   margin: 5px 0;
   transition: 0.3s;
 }
+
+/* Hamburger menu for small screens */
 @media (max-width: 768px) {
   .menu-icon { display: flex; }
   .navbar ul { 
@@ -83,22 +88,23 @@ a {
     display: none;
     padding: 20px 0;
   }
-  #menu-toggle:checked + .menu-icon + ul { display: flex; }
+  #menu-toggle:checked ~ ul { display: flex; }
   .navbar ul li { margin: 10px 0; text-align: center; }
 }
 
 /* ------------------ Hero ------------------ */
 .hero { 
-  padding: 150px 20px 100px; 
+  padding: 120px 20px 80px; 
   text-align: center; 
   animation: fadeIn 1.5s ease-in-out; 
 }
+
 .hero h1 { color: red; font-size: 50px; margin-bottom: 20px; }
 .hero p { font-size: 22px; max-width: 700px; margin: 0 auto; color: #fff; }
 
 /* ------------------ Sections ------------------ */
 section { 
-  padding: 60px 20px;
+  padding: 50px 20px;
   max-width: 900px;
   margin: 0 auto 50px;
   border: 2px solid red;
@@ -106,24 +112,29 @@ section {
   background-color: #111;
   transition: transform 0.3s, box-shadow 0.3s;
 }
+
 section:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(255, 0, 0, 0.5);
 }
+
 section h1, section h2 { 
   color: red; 
   margin-bottom: 20px; 
 }
+
 section p { 
   margin-bottom: 15px; 
   color: #fff; 
   font-size: 18px; 
   line-height: 1.7; 
 }
+
 section ul {
   margin-left: 20px;
   margin-bottom: 15px;
 }
+
 section ul li {
   margin-bottom: 10px;
   font-size: 18px;
@@ -137,8 +148,9 @@ section img {
   border: 2px solid red;
   border-radius: 10px;
   margin: 15px 0;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out;
 }
+
 section img:hover {
   transform: scale(1.05);
 }
@@ -151,13 +163,14 @@ section iframe {
   margin: 15px 0;
   border: 2px solid red;
   border-radius: 10px;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out;
 }
+
 section iframe:hover {
   transform: scale(1.02);
 }
 
-/* ------------------ Interests Section (Stacked) ------------------ */
+/* ------------------ Interests Section (Collapsible) ------------------ */
 .interests { 
   display: flex; 
   flex-direction: column;  
@@ -199,7 +212,7 @@ section iframe:hover {
 }
 
 .interest-item input[type="checkbox"]:checked ~ .interest-text {
-  max-height: 500px; 
+  max-height: 1000px; /* allow long text */
 }
 
 /* Interest Images */
@@ -210,12 +223,14 @@ section iframe:hover {
   gap: 10px;
   margin-top: 15px;
 }
+
 .interest-images img {
   border-radius: 8px;
   max-width: 100%;
   height: auto;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out;
 }
+
 .interest-images img:hover {
   transform: scale(1.05);
 }
@@ -224,8 +239,8 @@ section iframe:hover {
 footer { 
   text-align: center; 
   padding: 25px 10px; 
-  color: red; 
-  border-top: 2px solid red; 
+  color: #ff5555; 
+  border-top: 2px solid #ff5555; 
   margin-top: 40px; 
   font-weight: bold;
 }
@@ -241,7 +256,8 @@ footer {
   .logo { font-size: 1.5rem; }
   .hero h1 { font-size: 32px; }
   .hero p { font-size: 18px; }
-  .interest-item { width: 90%; }
+  .interest-item { width: 90%; padding: 15px; }
   section p, section ul li { font-size: 16px; }
   section img, section iframe { max-width: 100%; }
 }
+
