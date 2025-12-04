@@ -30,10 +30,7 @@ a {
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(255, 0, 0, 0.3);
 }
-.logo pic {
-  height: 60px;
-  width: auto;
-  margin-right: 15px;
+
 }
 .logo {
   font-size: 28px;
